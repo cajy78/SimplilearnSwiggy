@@ -3,12 +3,12 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="org.test.smplrn.swiggy.LoginTest">
+      <class name="testcases.LoginTest">
       	<methods>
       	<exclude name="testLogin"/>
       	</methods>
       </class>
-      <class name="org.test.smplrn.swiggy.SignUpTest"/>
+      <class name="testcases.SignUpTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

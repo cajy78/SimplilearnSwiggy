@@ -47,10 +47,10 @@ public class HomePage extends Pages
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 	}
 	
-	public void runLoginTest()
+	public void runLoginTest(String mobile)
 	{
 		loginLink.click();
-		loginID.sendKeys("9619127329");
+		loginID.sendKeys(mobile);
 		//Actions ma = new Actions(driver);
 		//ma.moveToElement(submitLogin).build().perform();
 		//ma.click(submitLogin).build().perform();

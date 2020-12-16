@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.test.smplrn.swiggy.FoodSearchTest">
+      <class name="testcases.LoginTest">
         <methods>
-          <include name="findFood"/>
+          <include name="quitBrowsers"/>
+          <include name="testLogin" invocation-numbers="0"/>
+          <include name="osNameCheck"/>
         </methods>
-      </class> <!-- org.test.smplrn.swiggy.FoodSearchTest -->
+      </class> <!-- testcases.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

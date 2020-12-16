@@ -10,20 +10,50 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import testproperties.TestingProperties;
+
 public class SeleniumWebDriver
 {
 	private static WebDriver driver;
 	
-	public static WebDriver chromeDriver()
+	public static WebDriver winChromeDriver()
 	{
-		System.setProperty("webdriver.chrome.driver","./drivers/windows/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",TestingProperties.getWinDriverLocation()+"./chromedriver.exe");
 		driver = new ChromeDriver();
 		return driver;
 	}
 	
-	public static WebDriver firefoxDriver()
+	public static WebDriver winFirefoxDriver()
 	{
-		System.setProperty("webdriver.gecko.driver","./drivers/windows/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver",TestingProperties.getWinDriverLocation()+"/geckodriver.exe");
+		driver = new FirefoxDriver();
+		return driver;
+	}
+	
+	public static WebDriver macChromeDriver()
+	{
+		System.setProperty("webdriver.chrome.driver",TestingProperties.getMacDriverLocation()+"./chromedriver");
+		driver = new ChromeDriver();
+		return driver;
+	}
+	
+	public static WebDriver macFirefoxDriver()
+	{
+		System.setProperty("webdriver.gecko.driver",TestingProperties.getMacDriverLocation()+"/geckodriver");
+		driver = new FirefoxDriver();
+		return driver;
+	}
+	
+	public static WebDriver linuxChromeDriver()
+	{
+		System.setProperty("webdriver.chrome.driver",TestingProperties.getLinuxDriverLocation()+"./chromedriver");
+		driver = new ChromeDriver();
+		return driver;
+	}
+	
+	public static WebDriver linuxFirefoxDriver()
+	{
+		System.setProperty("webdriver.gecko.driver",TestingProperties.getLinuxDriverLocation()+"/geckodriver");
 		driver = new FirefoxDriver();
 		return driver;
 	}
