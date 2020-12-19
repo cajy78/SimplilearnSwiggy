@@ -80,9 +80,9 @@ public class HomePage extends Pages
 		System.out.println("the OTP Message displayed is: "+otpMsg.getText());
 	}
 	
-	public void runLocationTest() throws InterruptedException
+	public void runLocationTest(String location) throws InterruptedException
 	{
-		locationSearch.sendKeys("Thane");
+		locationSearch.sendKeys(location);
 		//findFood.click();
 		//Thread.sleep(2000);
 		System.out.println("Size of the elements:" +findFoodSearch.size());

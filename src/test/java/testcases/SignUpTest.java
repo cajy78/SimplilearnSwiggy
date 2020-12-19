@@ -61,7 +61,7 @@ public class SignUpTest extends TestCase
 	public Object[][] getTestData() throws IOException
 	{
 		String filePath = TestingProperties.getTestDataFilePath();
-		String fileName = "testdata.xlsx";
+		String fileName = TestingProperties.getTestDataFileName();
 		String sheetName="SignUp";
 		return ExcelReader.ReadTestData(filePath, fileName, sheetName);
 	}

@@ -54,14 +54,15 @@ public class FoodSearchTest extends TestCase
 		}
 		
 		HomePage home = new HomePage(driver);
-		home.runLocationTest();
+		home.runLocationTest(testData.get("location"));
+		driver.close();
 	}
 	
 	@DataProvider
 	public Object[][] getTestData() throws IOException
 	{
 		String filePath = TestingProperties.getTestDataFilePath();
-		String fileName = "testdata.xlsx";
+		String fileName = TestingProperties.getTestDataFileName();
 		String sheetName="FoodSearch";
 		return ExcelReader.ReadTestData(filePath, fileName, sheetName);
 	}

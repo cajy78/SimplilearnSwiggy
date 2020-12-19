@@ -59,7 +59,7 @@ public class TestingProperties
 	public static String getTestDataFileName()
 	{
 		getPropertiesFile();
-		tdFile = System.getProperty("testData.fileName");
+		tdFile = prop.getProperty("testData.fileName");
 		System.out.println("the file name is: "+tdFile);
 		return tdFile;
 	}
