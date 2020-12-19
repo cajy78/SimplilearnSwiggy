@@ -54,7 +54,7 @@ public class SignUpTest extends TestCase
 		}
 		
 		HomePage home = new HomePage(driver);
-		home.runSignUpTest();
+		//home.runSignUpTest(testData.get("id"));
 	}
 	
 	@DataProvider

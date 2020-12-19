@@ -67,8 +67,14 @@ public class TestingProperties
 	public static String getTestDataFile()
 	{
 		getPropertiesFile();
-		testDataFile = System.getProperty("testData.file");
+		testDataFile = prop.getProperty("testData.file");
 		System.out.println(testDataFile);
 		return testDataFile;
+	}
+	
+	public static String getDesignatedBrowser()
+	{
+		getPropertiesFile();
+		return prop.getProperty("designatedBrowser.type");
 	}
 }

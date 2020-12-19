@@ -18,7 +18,7 @@ public class SeleniumWebDriver
 	
 	public static WebDriver winChromeDriver()
 	{
-		System.setProperty("webdriver.chrome.driver",TestingProperties.getWinDriverLocation()+"./chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",TestingProperties.getWinDriverLocation()+"/chromedriver.exe");
 		driver = new ChromeDriver();
 		return driver;
 	}
@@ -32,7 +32,7 @@ public class SeleniumWebDriver
 	
 	public static WebDriver macChromeDriver()
 	{
-		System.setProperty("webdriver.chrome.driver",TestingProperties.getMacDriverLocation()+"./chromedriver");
+		System.setProperty("webdriver.chrome.driver",TestingProperties.getMacDriverLocation()+"/chromedriver");
 		driver = new ChromeDriver();
 		return driver;
 	}
@@ -46,7 +46,7 @@ public class SeleniumWebDriver
 	
 	public static WebDriver linuxChromeDriver()
 	{
-		System.setProperty("webdriver.chrome.driver",TestingProperties.getLinuxDriverLocation()+"./chromedriver");
+		System.setProperty("webdriver.chrome.driver",TestingProperties.getLinuxDriverLocation()+"/chromedriver");
 		driver = new ChromeDriver();
 		return driver;
 	}
