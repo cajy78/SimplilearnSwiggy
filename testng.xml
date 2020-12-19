@@ -2,13 +2,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
-    <classes>
-      <class name="testcases.LoginTest">
-      	<methods>
-      	<exclude name="testLogin"/>
-      	</methods>
-      </class>
-      <class name="testcases.SignUpTest"/>
-    </classes>
+<!--     <classes> -->
+<!--       <class name="testcases.LoginTest"> -->
+<!--       	<methods> -->
+<!--       	<exclude name="testLogin"/> -->
+<!--       	</methods> -->
+<!--       </class> -->
+<!--       <class name="testcases.SignUpTest"/> -->
+<!--     </classes> -->
+<classes>
+<class name="testrunner.TestRunner"/>
+</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -19,4 +19,4 @@ Feature: Account Login
 
     Examples: 
       | unregisteredmobilenumber | name      | email           | password |
-      |               9757078221 | viriginia | cajy78@live.com | P@$$w0rd |
+      |               7405217429 | viriginia | cajy78@live.com | P@$$w0rd |

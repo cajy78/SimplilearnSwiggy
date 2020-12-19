@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33221" started-at="2020-12-19T23:00:21 IST" finished-at="2020-12-19T23:00:54 IST">
+  <suite name="Suite" duration-ms="33934" started-at="2020-12-19T23:05:59 IST" finished-at="2020-12-19T23:06:33 IST">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="33221" started-at="2020-12-19T23:00:21 IST" finished-at="2020-12-19T23:00:54 IST">
+    <test name="Test" duration-ms="33934" started-at="2020-12-19T23:05:59 IST" finished-at="2020-12-19T23:06:33 IST">
       <class name="testrunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="setUpClass" is-config="true" duration-ms="1688" started-at="2020-12-19T23:00:21 IST" finished-at="2020-12-19T23:00:23 IST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="setUpClass" is-config="true" duration-ms="1800" started-at="2020-12-19T23:05:59 IST" finished-at="2020-12-19T23:06:01 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="runScenario" duration-ms="18008" started-at="2020-12-19T23:00:23 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-12-19T23:00:41 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="runScenario" duration-ms="17649" started-at="2020-12-19T23:06:01 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-12-19T23:06:19 IST">
           <params>
             <param index="0">
               <value>
@@ -30,7 +30,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="runScenario" duration-ms="12673" started-at="2020-12-19T23:00:41 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-12-19T23:00:54 IST">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="runScenario" duration-ms="13615" started-at="2020-12-19T23:06:19 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-12-19T23:06:33 IST">
           <params>
             <param index="0">
               <value>
@@ -46,11 +46,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="tearDownClass" is-config="true" duration-ms="678" started-at="2020-12-19T23:00:54 IST" finished-at="2020-12-19T23:00:54 IST">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:testrunner.TestRunner@51e2adc7]" name="tearDownClass" is-config="true" duration-ms="679" started-at="2020-12-19T23:06:33 IST" finished-at="2020-12-19T23:06:33 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- testrunner.TestRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
