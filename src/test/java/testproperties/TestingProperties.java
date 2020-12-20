@@ -65,4 +65,10 @@ public class TestingProperties
 		getPropertiesFile();
 		return prop.getProperty("extentreport.file");
 	}
+	
+	public static String getScreenshotFolder()
+	{
+		getPropertiesFile();
+		return prop.getProperty("screenshot.folder");
+	}
 }

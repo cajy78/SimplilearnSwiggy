@@ -1,6 +1,12 @@
 package pages;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -27,5 +33,13 @@ public class Pages
 	{
 		WebDriverWait wait = new WebDriverWait(driver,Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 		wait.until(ExpectedConditions.textToBePresentInElement(element, textToCheck));
+	}
+	
+	public static void takeSS(WebDriver driver, String path) throws IOException
+	{
+		TakesScreenshot scrnSht = ((TakesScreenshot)driver);
+		File scrFile = scrnSht.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(path);
+		FileUtils.copyFile(scrFile, destFile);
 	}
 }

@@ -1,5 +1,6 @@
 package pages;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -18,7 +19,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import testproperties.TestingProperties;
 
-public class FoodORRestoSearch
+public class FoodORRestoSearch extends Pages
 {
 	private WebDriver driver;
 	private WebDriverWait wait;
@@ -48,9 +49,10 @@ public class FoodORRestoSearch
 		wait = new WebDriverWait(driver,Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 	}
 	
-	public void runFoodRestoSearch(ExtentTest logger)
+	public void runFoodRestoSearch(ExtentTest logger) throws IOException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(genericSearchBar));
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"FoodnRestoGenericSearch.jpg");
 		try
 		{
 			Assert.assertEquals(genericSearchBar.getAttribute("placeholder"), "Search for restaurants or dishes");
@@ -63,38 +65,33 @@ public class FoodORRestoSearch
 		}
 	}
 	
-	public void runFoodAddToCartSearch(ExtentTest node, ExtentTest logger, String foodItem) throws InterruptedException
+	public void runFoodAddToCartSearch(ExtentTest node, ExtentTest logger, String foodItem) throws InterruptedException, IOException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(genericSearchBar));
 		genericSearchBar.click();
 		genericSearchBar.sendKeys(foodItem);
-		//wait.until(ExpectedConditions.textToBePresentInElement(genericSearchBar.getText(), foodItem));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("_3sbqM")));
 		foodItems.get(0).click();
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"AddToCardFoodSearch.jpg");
 		node.log(LogStatus.PASS, "Searching food item "+foodItem+ " successfully completed");
-		//logger.appendChild(node);
-		//addFood.click();
 	}
 	
-	public void addToCartTest() throws InterruptedException
+	public void addToCartTest() throws InterruptedException, IOException
 	{
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("_1RPOp")));
-		//Thread.sleep(5000);
 		System.out.println("The number of food items to be added is: "+addFood.size());
 		addFood.get(0).click();
-		//wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(cart)));
 		Thread.sleep(3000);
 		cart.click();
 	}
 	
-	public void validateCartTest(ExtentTest node)
+	public void validateCartTest(ExtentTest node) throws IOException
 	{
 		try
 		{
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.className("_2EQ3T")));
 			String title = checkoutTitle.getText();
-			System.out.println("The title is: "+title);
-			System.out.println("The page message is: "+payMsg.getText());
+			takeSS(driver,TestingProperties.getScreenshotFolder()+"ItemAddedToCart.jpg");
 			if(title.equalsIgnoreCase("SECURE CHECKOUT") && payMsg.getText().contains("TO PAY"))
 			{
 				node.log(LogStatus.PASS, "Add to cart feature successfully completed");

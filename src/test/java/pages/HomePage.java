@@ -1,5 +1,6 @@
 package pages;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -80,10 +81,11 @@ public class HomePage extends Pages
 		submitLogin.click();
 	}
 	
-	public void validateLogin(ExtentTest node) throws InterruptedException
+	public void validateLogin(ExtentTest node) throws InterruptedException, IOException
 	{
 		try {
 			Thread.sleep(1000);
+			takeSS(driver,TestingProperties.getScreenshotFolder()+"RegisteredNoLogin.jpg");
 			Assert.assertEquals(otpMsg.getText(),"Enter OTP");
 			node.log(LogStatus.PASS, "Login test passed successfully");
 		}
@@ -94,12 +96,13 @@ public class HomePage extends Pages
 		}
 	}
 	
-	public void unregisteredSignup(String name, String emailAddress, String password, ExtentTest node) throws InterruptedException
+	public void unregisteredSignup(String name, String emailAddress, String password, ExtentTest node) throws InterruptedException, IOException
 	{
 		userName.sendKeys(name);
 		email.sendKeys(emailAddress);
 		pwd.sendKeys(password);
 		submitLogin.click();
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"UnRegisteredNoLogin.jpg");
 		validateSignUpTest(node);
 	}
 	
@@ -116,20 +119,22 @@ public class HomePage extends Pages
 			throw e;
 		}
 	}
-	public void runSignUpTest(String mobile, String name, String emailAddress, String password)
+	public void runSignUpTest(String mobile, String name, String emailAddress, String password) throws IOException
 	{
 		mobileNumber.sendKeys(mobile);
 		userName.sendKeys(name);
 		email.sendKeys(emailAddress);
 		pwd.sendKeys(password);
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"AccountSignupDetails.jpg");
 		submitLogin.click();
 	}
 	
-	public void validateSignUpTest(ExtentTest node) throws InterruptedException
+	public void validateSignUpTest(ExtentTest node) throws InterruptedException, IOException
 	{
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 			wait.until(ExpectedConditions.textToBePresentInElement(submitLogin, "VERIFY OTP"));
+			takeSS(driver,TestingProperties.getScreenshotFolder()+"AccountSignupClick.jpg");
 			Assert.assertEquals(submitLogin.getText(),"VERIFY OTP");
 			node.log(LogStatus.PASS, "Signup test passed successfully");
 		}
@@ -141,9 +146,10 @@ public class HomePage extends Pages
 		}
 	}
 	
-	public void runLocationTest(String location) throws InterruptedException
+	public void runLocationTest(String location) throws InterruptedException, IOException
 	{
 		locationSearch.sendKeys(location);
 		findFoodSearch.get(0).click();
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"FindFoodSubmitted.jpg");
 	}
 }

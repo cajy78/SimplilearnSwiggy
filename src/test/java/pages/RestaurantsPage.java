@@ -1,5 +1,7 @@
 package pages;
 
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +17,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import testproperties.TestingProperties;
 
-public class RestaurantsPage
+public class RestaurantsPage extends Pages
 {
 	private WebDriver driver;
 	
@@ -37,12 +39,11 @@ public class RestaurantsPage
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout())), this);
 	}
 	
-	public void validateLocationSearch(ExtentTest logger)
+	public void validateLocationSearch(ExtentTest logger) throws IOException
 	{
 		System.out.println(searchTitle.getText());
 		String[] title = searchTitle.getText().split(" ");
-		System.out.println("Total number of restraurants found: "+title[0]);
-		System.out.println("Text after split: "+title[1]);
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"RestaurantsInLocationSearch.jpg");
 		try
 		{
 			System.out.println("The number is :"+Integer.parseInt(title[0]));
@@ -63,19 +64,21 @@ public class RestaurantsPage
 		}
 	}
 	
-	public void searchBarActions(ExtentTest logger) throws InterruptedException
+	public void searchBarActions(ExtentTest logger) throws InterruptedException, IOException
 	{
 		searchBar.click();
 		Thread.sleep(2000);
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"SearchBarClick.jpg");
 		FoodORRestoSearch frs = new FoodORRestoSearch(driver);
 		frs.runFoodRestoSearch(logger);
 	}
 	
-	public void checkoutSearchActions(ExtentTest node, ExtentTest logger)
+	public void checkoutSearchActions(ExtentTest node, ExtentTest logger) throws IOException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(searchBar));
 		searchBar.click();
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"checkoutSearchActions.jpg");
 		node.log(LogStatus.PASS,"Generic search page successfully entered");
 		logger.appendChild(node);
 	}
