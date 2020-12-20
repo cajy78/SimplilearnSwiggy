@@ -12,5 +12,5 @@ Feature: Account Signup
     Then site should create user account
 
     Examples: 
-      | phonenumber | name               | emailaddress    | password |
-      |  9757078221 | Virginia Fernandes | cajy78@live.com | P@$$w0rd |
+      | phonenumber | name             | emailaddress            | password |
+      |  9757078221 | Vegas Nevadatory | cajy78@testingVegas.com | P@$$w0rd |

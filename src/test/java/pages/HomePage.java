@@ -76,16 +76,18 @@ public class HomePage extends Pages
 		mobileNumber.sendKeys(mobile);
 		submitLogin.click();
 	}
-	public void validateLogin(ExtentTest logger)
+	
+	public void validateLogin(ExtentTest logger) throws InterruptedException
 	{
 		try {
 			Thread.sleep(1000);
 			Assert.assertEquals(otpMsg.getText(),"Enter OTP");
 			logger.log(LogStatus.PASS, "Login test passed successfully");
 		}
-		catch(Exception e)
+		catch(AssertionError e)
 		{
 			logger.log(LogStatus.FAIL, "Login test has failed due to an exception - check console log");
+			throw e;
 		}
 	}
 	
@@ -97,16 +99,17 @@ public class HomePage extends Pages
 		submitLogin.click();
 	}
 	
-	public void validateSignUpPage(ExtentTest logger)
+	public void validateSignUpPage(ExtentTest logger) throws InterruptedException
 	{
 		try {
 			Thread.sleep(1000);
 			Assert.assertEquals(otpMsg.getText(),"Sign up");
 			logger.log(LogStatus.PASS, "Initial Signup Page test passed successfully");
 		}
-		catch(Exception e)
+		catch(AssertionError e)
 		{
 			logger.log(LogStatus.FAIL, "Initial Signup Pagetest failed due to an exception - check console log");
+			throw e;
 		}
 	}
 	public void runSignUpTest(String mobile, String name, String emailAddress, String password)
@@ -120,16 +123,18 @@ public class HomePage extends Pages
 		submitLogin.click();
 	}
 	
-	public void validateSignUpTest(ExtentTest logger)
+	public void validateSignUpTest(ExtentTest logger) throws InterruptedException
 	{
 		try {
 			Thread.sleep(1000);
 			Assert.assertEquals(submitLogin.getText(),"VERIFY OTP");
 			logger.log(LogStatus.PASS, "Signup test passed successfully");
 		}
-		catch(Exception e)
+		catch(AssertionError e)
 		{
-			logger.log(LogStatus.FAIL, "Signup test failed due to an exception - check console log");
+			System.out.println("Assertion Error Catch block entered");
+			logger.log(LogStatus.FAIL, "Signup test failed due to an error - check console log");
+			throw e;
 		}
 	}
 	
@@ -137,8 +142,8 @@ public class HomePage extends Pages
 	{
 		locationSearch.sendKeys(location);
 		//findFood.click();
-		//Thread.sleep(2000);
-		System.out.println("Size of the elements:" +findFoodSearch.size());
+		//System.out.println("Size of the elements:" +findFoodSearch.size());
 		findFoodSearch.get(0).click();
+		//Thread.sleep(5000);
 	}
 }

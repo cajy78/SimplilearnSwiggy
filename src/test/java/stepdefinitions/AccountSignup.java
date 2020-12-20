@@ -23,7 +23,7 @@ public class AccountSignup
     public void user_accesses_swiggy() throws Throwable
 	{
 		driver = CucumberSetup.driver;
-		extent = new ExtentReports("./extentreports/SignupPageTest.html");
+		extent = new ExtentReports("./extentReports/SwiggyRegressionTests_ExtentReport.html", false);
 		home = new HomePage(driver);
 		logger = extent.startTest("Swiggy Signup Page Test");
     }
@@ -45,7 +45,7 @@ public class AccountSignup
     public void unregistered_user_accesses_swiggy_and_clicks_on_signup() throws Throwable
 	{	//logger = extent.startTest("Swiggy Signup Test");
 		driver = CucumberSetup.driver;
-		extent = new ExtentReports("./extentreports/SigunUpTest.html");
+		extent = new ExtentReports("./extentreports/Signup.html", false);
 		home = new HomePage(driver);
 		logger = extent.startTest("Swiggy Signup  Test");
 		home.signUpClick();

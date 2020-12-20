@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Dec 19 23:00:21 IST 2020</td>
+<td>Started on:</td><td>Sun Dec 20 11:44:51 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>33 seconds (33221 ms)</td>
+<tr><td>Total time:</td><td>87 seconds (87523 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,55 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Registered user attempts login", "Optional[Account Login]"</td>
+<td></td>
+<td>15</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
+<tr>
+<td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Unregistered user attempts login", "Optional[Account Login]"</td>
+<td></td>
+<td>9</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
+<tr>
 <td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User attempts to signup", "Optional[Account Signup]"</td>
 <td></td>
-<td>18</td>
-<td>testrunner.TestRunner@51e2adc7</td></tr>
+<td>9</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
 <tr>
 <td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User attempts to signup on Swiggy website", "Optional[Account Signup]"</td>
 <td></td>
-<td>12</td>
-<td>testrunner.TestRunner@51e2adc7</td></tr>
+<td>9</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
+<tr>
+<td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search restaurants in location", "Optional[Search]"</td>
+<td></td>
+<td>13</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
+<tr>
+<td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search restaurants in location", "Optional[Search]"</td>
+<td></td>
+<td>13</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testrunner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Enable cart to allow users to add food items and checkout", "Optional[Add to cart]"</td>
+<td><div><pre>org.testng.SkipException: Test skipped since purchase without login is not possible
+	at stepdefinitions.CheckoutCart.allow_user_to_purchase_items_in_cart(CheckoutCart.java:79)
+	at ✽.allow user to purchase items in cart(file:///Users/cajetanfernandes/OneDrive/Documents/Studies_and_Certs/Automation_Testing_Masters/Phase_2/Final_Project_WS/Eclipse_2018-09_MacOS/swiggy/src/test/java/features/CheckoutCart.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1566311673", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1566311673'><pre>org.testng.SkipException: Test skipped since purchase without login is not possible
+	at stepdefinitions.CheckoutCart.allow_user_to_purchase_items_in_cart(CheckoutCart.java:79)
+	at ✽.allow user to purchase items in cart(file:///Users/cajetanfernandes/OneDrive/Documents/Studies_and_Certs/Automation_Testing_Masters/Phase_2/Final_Project_WS/Eclipse_2018-09_MacOS/swiggy/src/test/java/features/CheckoutCart.feature:9)
+</pre></div></td>
+<td>15</td>
+<td>testrunner.TestRunner@2353b3e6</td></tr>
 </table><p>
 </body>
 </html>
