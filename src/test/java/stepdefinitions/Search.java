@@ -12,6 +12,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import pages.RestaurantsPage;
+import testproperties.TestingProperties;
 
 public class Search
 {
@@ -25,7 +26,7 @@ public class Search
     public void user_access_swiggy_website() throws Throwable
 	{
 		driver = CucumberSetup.driver;
-		extent = new ExtentReports("./extentReports/SwiggyRegressionTests_ExtentReport.html",false);
+		extent = new ExtentReports(TestingProperties.getExtentReportLocation(), false);
 		home = new HomePage(driver);
 		logger = extent.startTest("Location Search");
     }
@@ -49,7 +50,7 @@ public class Search
     @And("^provide generic search functionality to run additional food or restaurant searches$")
     public void provide_generic_search_functionality_to_run_additional_food_or_restaurant_searches() throws Throwable
     {
-    	extent = new ExtentReports("./extentReports/Search.html",false);
+    	extent = new ExtentReports(TestingProperties.getExtentReportLocation(), false);
     	logger = extent.startTest("Allow generic food or restaurant search");
     	location.searchBarActions(logger);
     	extent.endTest(logger);

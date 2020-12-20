@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 import testcases.TestCaseListeners;
 
 @CucumberOptions(
-		//monochrome = true,
+		monochrome = true,
 		plugin = {"pretty", "html:target/cucumber-html", "json:target/cucumber.json"},
 		features = "src/test/java/features",
 		//tags = "~@Ignore"

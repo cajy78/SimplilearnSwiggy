@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import testproperties.TestingProperties;
+
 public class RestaurantsPage
 {
 	private WebDriver driver;
@@ -32,7 +34,7 @@ public class RestaurantsPage
 	public RestaurantsPage(WebDriver driver)
 	{
 		this.driver = driver;
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout())), this);
 	}
 	
 	public void validateLocationSearch(ExtentTest logger)

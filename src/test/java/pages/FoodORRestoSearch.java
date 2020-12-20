@@ -16,6 +16,8 @@ import org.testng.Assert;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import testproperties.TestingProperties;
+
 public class FoodORRestoSearch
 {
 	private WebDriver driver;
@@ -43,7 +45,7 @@ public class FoodORRestoSearch
 	{
 		this.driver = driver;
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
-		wait = new WebDriverWait(driver,10);
+		wait = new WebDriverWait(driver,Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 	}
 	
 	public void runFoodRestoSearch(ExtentTest logger)

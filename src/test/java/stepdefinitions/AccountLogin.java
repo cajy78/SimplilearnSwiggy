@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
+import testproperties.TestingProperties;
 
 public class AccountLogin
 {
@@ -23,7 +24,7 @@ public class AccountLogin
     public void registered_user_accesses_website_and_attempts_to_login() throws Throwable
 	{
 		driver = CucumberSetup.driver;
-		extent = new ExtentReports("./extentReports/SwiggyRegressionTests_ExtentReport.html");
+		extent = new ExtentReports(TestingProperties.getExtentReportLocation(), false);
 		home = new HomePage(driver);
 		logger = extent.startTest("Registered User Login");
 		home.loginClick();

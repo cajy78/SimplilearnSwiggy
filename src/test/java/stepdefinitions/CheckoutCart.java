@@ -14,6 +14,7 @@ import io.cucumber.java.en.When;
 import pages.FoodORRestoSearch;
 import pages.HomePage;
 import pages.RestaurantsPage;
+import testproperties.TestingProperties;
 
 public class CheckoutCart
 {
@@ -28,7 +29,7 @@ public class CheckoutCart
 	@Given("^user accesses Swiggy$")
     public void user_accesses_swiggy() throws Throwable {
 		driver = CucumberSetup.driver;
-		extent = new ExtentReports("./extentReports/SwiggyRegressionTests_ExtentReport.html",false);
+		extent = new ExtentReports(TestingProperties.getExtentReportLocation(), false);
 		home = new HomePage(driver);
 		logger = extent.startTest("Add to cart and Checkout");
     }

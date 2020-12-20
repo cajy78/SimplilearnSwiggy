@@ -8,8 +8,7 @@ import java.util.Properties;
 public class TestingProperties
 {
 	private static Properties prop;
-	private static String siteURL, tdFilePath, tdFile, designatedBrowserType, loginPage, windowsDriverLocation, testDataFile, macDrivers, linuxDrivers;
-	private static List<String> browserList = new ArrayList<String>();
+	private static String windowsDriverLocation, macDrivers, linuxDrivers;
 	
 	private static void getPropertiesFile()
 	{
@@ -49,32 +48,21 @@ public class TestingProperties
 		return windowsDriverLocation;
 	}
 	
-	public static String getTestDataFilePath()
-	{
-		//getPropertiesFile();
-		tdFilePath = System.getProperty("user.dir");
-		return tdFilePath;
-	}
-	
-	public static String getTestDataFileName()
-	{
-		getPropertiesFile();
-		tdFile = prop.getProperty("testData.fileName");
-		System.out.println("the file name is: "+tdFile);
-		return tdFile;
-	}
-	
-	public static String getTestDataFile()
-	{
-		getPropertiesFile();
-		testDataFile = prop.getProperty("testData.file");
-		System.out.println(testDataFile);
-		return testDataFile;
-	}
-	
 	public static String getDesignatedBrowser()
 	{
 		getPropertiesFile();
 		return prop.getProperty("designatedBrowser.type");
+	}
+	
+	public static String getLoadAndWaitTimeout()
+	{
+		getPropertiesFile();
+		return prop.getProperty("loadAndWait.timeout");
+	}
+	
+	public static String getExtentReportLocation()
+	{
+		getPropertiesFile();
+		return prop.getProperty("extentreport.file");
 	}
 }

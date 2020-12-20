@@ -14,6 +14,8 @@ import org.testng.Assert;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import testproperties.TestingProperties;
+
 public class HomePage extends Pages
 {
 	private WebDriver driver;
@@ -57,7 +59,7 @@ public class HomePage extends Pages
 	public HomePage(WebDriver driver)
 	{
 		this.driver = driver;
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout())), this);
 	}
 	
 	public void loginClick()

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import testproperties.TestingProperties;
+
 public class Pages
 {
 	public void waitForLoad(WebDriver driver)
@@ -17,13 +19,13 @@ public class Pages
 				return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
 			}
 		};
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 		wait.until(pageLoadCondition);
 	}
 	
 	public void dynamicWait(WebDriver driver, WebElement element, String textToCheck)
 	{
-		WebDriverWait wait = new WebDriverWait(driver,10);
+		WebDriverWait wait = new WebDriverWait(driver,Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 		wait.until(ExpectedConditions.textToBePresentInElement(element, textToCheck));
 	}
 }
