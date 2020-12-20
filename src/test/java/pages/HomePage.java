@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -126,7 +128,8 @@ public class HomePage extends Pages
 	public void validateSignUpTest(ExtentTest node) throws InterruptedException
 	{
 		try {
-			Thread.sleep(1000);
+			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
+			wait.until(ExpectedConditions.textToBePresentInElement(submitLogin, "VERIFY OTP"));
 			Assert.assertEquals(submitLogin.getText(),"VERIFY OTP");
 			node.log(LogStatus.PASS, "Signup test passed successfully");
 		}
