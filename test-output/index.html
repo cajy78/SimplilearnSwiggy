@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,  1 skipped,  6 passed</span>
+                    <span class="method-stats">7 methods, 1 failed,  1 skipped,  5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Unregistered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">runScenario("Unregistered user attempts login", "Optional[Account Login]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title skipped">Skipped methods</span>
@@ -118,27 +132,22 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Registered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">runScenario("Registered user attempts login", "Optional[Account Login]")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Search restaurants in location&quot;, &quot;Optional[Search]&quot;)">runScenario("Search restaurants in location", "Optional[Search]")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Unregistered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">runScenario("Unregistered user attempts login", "Optional[Account Login]")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;User attempts to signup&quot;, &quot;Optional[Account Signup]&quot;)">runScenario("User attempts to signup", "Optional[Account Signup]")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Search restaurants in location&quot;, &quot;Optional[Search]&quot;)">runScenario("Search restaurants in location", "Optional[Search]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Search restaurants in location&quot;, &quot;Optional[Search]&quot;)">runScenario("Search restaurants in location", "Optional[Search]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testrunner.TestRunner" hash-for-method="runScenario(&quot;Registered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">runScenario("Registered user attempts login", "Optional[Account Login]")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -158,6 +167,29 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testrunner.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Unregistered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">
+                  </a> <!-- runScenario("Unregistered user attempts login", "Optional[Account Login]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Unregistered user attempts login", "Optional[Account Login]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at stepdefinitions.AccountLogin.enters_unregistered_something(AccountLogin.java:59)
+	at ✽.enters unregistered 7405217429(file:///Users/cajetanfernandes/OneDrive/Documents/Studies_and_Certs/Automation_Testing_Masters/Phase_2/Final_Project_WS/Eclipse_2018-09_MacOS/swiggy/src/test/java/features/AccountLogin.feature:17)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
@@ -189,36 +221,6 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Registered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">
-                  </a> <!-- runScenario("Registered user attempts login", "Optional[Account Login]") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Registered user attempts login", "Optional[Account Login]")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Search restaurants in location&quot;, &quot;Optional[Search]&quot;)">
-                  </a> <!-- runScenario("Search restaurants in location", "Optional[Search]") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Search restaurants in location", "Optional[Search]")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Unregistered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">
-                  </a> <!-- runScenario("Unregistered user attempts login", "Optional[Account Login]") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Unregistered user attempts login", "Optional[Account Login]")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="runScenario(&quot;User attempts to signup&quot;, &quot;Optional[Account Signup]&quot;)">
                   </a> <!-- runScenario("User attempts to signup", "Optional[Account Signup]") -->
                   <span class="method-name">runScenario</span>
@@ -233,6 +235,26 @@
                   </a> <!-- runScenario("Search restaurants in location", "Optional[Search]") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Search restaurants in location", "Optional[Search]")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Search restaurants in location&quot;, &quot;Optional[Search]&quot;)">
+                  </a> <!-- runScenario("Search restaurants in location", "Optional[Search]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Search restaurants in location", "Optional[Search]")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Registered user attempts login&quot;, &quot;Optional[Account Login]&quot;)">
+                  </a> <!-- runScenario("Registered user attempts login", "Optional[Account Login]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Registered user attempts login", "Optional[Account Login]")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -313,31 +335,31 @@ data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'testrunner.TestRunner')
-data.setCell(0, 3, 16617);
+data.setCell(0, 3, 15523);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'testrunner.TestRunner')
-data.setCell(1, 3, 15562);
+data.setCell(1, 3, 14472);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'testrunner.TestRunner')
-data.setCell(2, 3, 13578);
+data.setCell(2, 3, 13409);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
 data.setCell(3, 2, 'testrunner.TestRunner')
-data.setCell(3, 3, 12397);
+data.setCell(3, 3, 11818);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'runScenario')
 data.setCell(4, 2, 'testrunner.TestRunner')
-data.setCell(4, 3, 9669);
+data.setCell(4, 3, 7758);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'runScenario')
 data.setCell(5, 2, 'testrunner.TestRunner')
-data.setCell(5, 3, 8786);
+data.setCell(5, 3, 7752);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'runScenario')
 data.setCell(6, 2, 'testrunner.TestRunner')
-data.setCell(6, 3, 8619);
+data.setCell(6, 3, 5478);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -375,35 +397,37 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Registered user attempts login", "Optional[Account Login]")</span>
-                <span class="method-start">1426 ms</span>
+                <span class="method-start">1060 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">runScenario("Unregistered user attempts login", "Optional[Account Login]")</span>
-                <span class="method-start">16996 ms</span>
+                <span class="method-start">14493 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("User attempts to signup", "Optional[Account Signup]")</span>
-                <span class="method-start">26668 ms</span>
+                <span class="method-start">19984 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("User attempts to signup on Swiggy website", "Optional[Account Signup]")</span>
-                <span class="method-start">35456 ms</span>
+                <span class="method-start">27740 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Enable cart to allow users to add food items and checkout", "Optional[Add to cart]")</span>
-                <span class="method-start">44085 ms</span>
+                <span class="method-start">35501 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Search restaurants in location", "Optional[Search]")</span>
-                <span class="method-start">60706 ms</span>
+                <span class="method-start">51031 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Search restaurants in location", "Optional[Search]")</span>
-                <span class="method-start">74311 ms</span>
+                <span class="method-start">65512 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">86757 ms</span>
+                <span class="method-start">77337 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

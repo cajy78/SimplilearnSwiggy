@@ -19,6 +19,7 @@ public class AccountSignup
 	private HomePage home;
 	private ExtentReports extent;
 	private ExtentTest logger;
+	private ExtentTest node;
 	
 	@Given("^user accesses swiggy$")
     public void user_accesses_swiggy() throws Throwable
@@ -26,17 +27,20 @@ public class AccountSignup
 		driver = CucumberSetup.driver;
 		extent = new ExtentReports(TestingProperties.getExtentReportLocation(), false);
 		home = new HomePage(driver);
-		logger = extent.startTest("Swiggy Signup Page Test");
+		logger = extent.startTest("Swiggy Signup Page Scenario Test");
     }
 	
 	@When("^user clicks on Sign up$")
     public void user_clicks_on_sign_up() throws Throwable {
+		node = extent.startTest("Sign up Page Test");
 		home.signUpClick();
     }
 	
 	@Then("^site should display signup page$")
     public void site_should_display_signup_page() throws Throwable {
-        home.validateSignUpPage(logger);
+        home.validateSignUpPage(node);
+        logger.appendChild(node);
+        extent.endTest(node);
         extent.endTest(logger);
         extent.flush();
         extent.close();
@@ -48,19 +52,22 @@ public class AccountSignup
 		driver = CucumberSetup.driver;
 		extent = new ExtentReports(TestingProperties.getExtentReportLocation(), false);
 		home = new HomePage(driver);
-		logger = extent.startTest("Swiggy Signup  Test");
+		logger = extent.startTest("Swiggy Account Signup Scenario");
 		home.signUpClick();
     }
 
     @When("^user enters (.+), (.+), (.+), and (.+)$")
     public void user_enters_and(String phonenumber, String name, String emailaddress, String password) throws Throwable
     {
+    	node = extent.startTest("New Account Sign up test");
     	home.runSignUpTest(phonenumber, name, emailaddress, password);
     }
 
     @Then("^site should create user account$")
     public void site_should_create_user_account() throws Throwable {
-        home.validateSignUpTest(logger);
+        home.validateSignUpTest(node);
+        logger.appendChild(node);
+        extent.endTest(node);
         extent.endTest(logger);
         extent.flush();
         extent.close();

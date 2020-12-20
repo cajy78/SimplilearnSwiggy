@@ -20,7 +20,7 @@ public class Search
 	private HomePage home;
 	private ExtentReports extent;
 	private ExtentTest logger;
-	RestaurantsPage location; 
+	RestaurantsPage location;
 	
 	@Given("^user access swiggy website$")
     public void user_access_swiggy_website() throws Throwable

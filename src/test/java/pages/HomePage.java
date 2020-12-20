@@ -74,43 +74,43 @@ public class HomePage extends Pages
 	
 	public void runLoginTest(String mobile)
 	{
-		//loginLink.click();
 		mobileNumber.sendKeys(mobile);
 		submitLogin.click();
 	}
 	
-	public void validateLogin(ExtentTest logger) throws InterruptedException
+	public void validateLogin(ExtentTest node) throws InterruptedException
 	{
 		try {
 			Thread.sleep(1000);
 			Assert.assertEquals(otpMsg.getText(),"Enter OTP");
-			logger.log(LogStatus.PASS, "Login test passed successfully");
+			node.log(LogStatus.PASS, "Login test passed successfully");
 		}
 		catch(AssertionError e)
 		{
-			logger.log(LogStatus.FAIL, "Login test has failed due to an exception - check console log");
+			node.log(LogStatus.FAIL, "Login test has failed due to an exception - check console log");
 			throw e;
 		}
 	}
 	
-	public void unregisteredSignup(String name, String emailAddress, String password)
+	public void unregisteredSignup(String name, String emailAddress, String password, ExtentTest node) throws InterruptedException
 	{
 		userName.sendKeys(name);
 		email.sendKeys(emailAddress);
 		pwd.sendKeys(password);
 		submitLogin.click();
+		validateSignUpTest(node);
 	}
 	
-	public void validateSignUpPage(ExtentTest logger) throws InterruptedException
+	public void validateSignUpPage(ExtentTest node) throws InterruptedException
 	{
 		try {
 			Thread.sleep(1000);
 			Assert.assertEquals(otpMsg.getText(),"Sign up");
-			logger.log(LogStatus.PASS, "Initial Signup Page test passed successfully");
+			node.log(LogStatus.PASS, "Initial Signup Page test passed successfully");
 		}
 		catch(AssertionError e)
 		{
-			logger.log(LogStatus.FAIL, "Initial Signup Pagetest failed due to an exception - check console log");
+			node.log(LogStatus.FAIL, "Initial Signup Pagetest failed due to an exception - check console log");
 			throw e;
 		}
 	}
@@ -120,22 +120,20 @@ public class HomePage extends Pages
 		userName.sendKeys(name);
 		email.sendKeys(emailAddress);
 		pwd.sendKeys(password);
-		//dynamicWait(driver, otpMsg,"Sign up");
-		//System.out.println("the OTP Message displayed is: "+otpMsg.getText());
 		submitLogin.click();
 	}
 	
-	public void validateSignUpTest(ExtentTest logger) throws InterruptedException
+	public void validateSignUpTest(ExtentTest node) throws InterruptedException
 	{
 		try {
 			Thread.sleep(1000);
 			Assert.assertEquals(submitLogin.getText(),"VERIFY OTP");
-			logger.log(LogStatus.PASS, "Signup test passed successfully");
+			node.log(LogStatus.PASS, "Signup test passed successfully");
 		}
 		catch(AssertionError e)
 		{
 			System.out.println("Assertion Error Catch block entered");
-			logger.log(LogStatus.FAIL, "Signup test failed due to an error - check console log");
+			node.log(LogStatus.FAIL, "Signup test failed due to an error - check console log");
 			throw e;
 		}
 	}
@@ -143,9 +141,6 @@ public class HomePage extends Pages
 	public void runLocationTest(String location) throws InterruptedException
 	{
 		locationSearch.sendKeys(location);
-		//findFood.click();
-		//System.out.println("Size of the elements:" +findFoodSearch.size());
 		findFoodSearch.get(0).click();
-		//Thread.sleep(5000);
 	}
 }
