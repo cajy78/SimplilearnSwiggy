@@ -63,7 +63,7 @@ public class SeleniumWebDriver
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName("chrome");
 		cap.setPlatform(Platform.ANY);
-		String hubURL = "http://192.168.1.34:4444/wd/hub";
+		String hubURL = TestingProperties.getRemoteHub();
 		driver = new RemoteWebDriver(new URL(hubURL), cap);
 		return driver;
 	}
@@ -73,7 +73,7 @@ public class SeleniumWebDriver
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName("firefox");
 		cap.setPlatform(Platform.ANY);
-		String hubURL = "http://192.168.1.34:4444/wd/hub";
+		String hubURL = TestingProperties.getRemoteHub();
 		driver = new RemoteWebDriver(new URL(hubURL), cap);
 		return driver;
 	}
@@ -83,7 +83,7 @@ public class SeleniumWebDriver
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName("safari");
 		cap.setPlatform(Platform.ANY);
-		String hubURL = "http://192.168.1.34:4444/wd/hub";
+		String hubURL = TestingProperties.getRemoteHub();
 		driver = new RemoteWebDriver(new URL(hubURL), cap);
 		return driver;
 	}

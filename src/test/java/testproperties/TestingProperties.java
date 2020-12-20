@@ -71,4 +71,22 @@ public class TestingProperties
 		getPropertiesFile();
 		return prop.getProperty("screenshot.folder");
 	}
+	
+	public static String getRemoteFlag()
+	{
+		getPropertiesFile();
+		return prop.getProperty("remote.driver");
+	}
+	
+	public static String getRemoteHub()
+	{
+		getPropertiesFile();
+		return prop.getProperty("remote.hubUrl");
+	}
+	
+	public static String getWebsiteUrl()
+	{
+		getPropertiesFile();
+		return prop.getProperty("website.url");
+	}
 }
