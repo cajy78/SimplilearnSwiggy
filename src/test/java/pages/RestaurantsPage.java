@@ -43,7 +43,7 @@ public class RestaurantsPage extends Pages
 	{
 		System.out.println(searchTitle.getText());
 		String[] title = searchTitle.getText().split(" ");
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"RestaurantsInLocationSearch.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/RestaurantsInLocationSearch.jpg");
 		try
 		{
 			System.out.println("The number is :"+Integer.parseInt(title[0]));
@@ -68,7 +68,7 @@ public class RestaurantsPage extends Pages
 	{
 		searchBar.click();
 		Thread.sleep(2000);
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"SearchBarClick.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/SearchBarClick.jpg");
 		FoodORRestoSearch frs = new FoodORRestoSearch(driver);
 		frs.runFoodRestoSearch(logger);
 	}
@@ -78,7 +78,7 @@ public class RestaurantsPage extends Pages
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(searchBar));
 		searchBar.click();
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"checkoutSearchActions.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/checkoutSearchActions.jpg");
 		node.log(LogStatus.PASS,"Generic search page successfully entered");
 		logger.appendChild(node);
 	}

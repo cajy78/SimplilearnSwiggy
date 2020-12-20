@@ -52,7 +52,7 @@ public class FoodORRestoSearch extends Pages
 	public void runFoodRestoSearch(ExtentTest logger) throws IOException
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(genericSearchBar));
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"FoodnRestoGenericSearch.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/FoodnRestoGenericSearch.jpg");
 		try
 		{
 			Assert.assertEquals(genericSearchBar.getAttribute("placeholder"), "Search for restaurants or dishes");
@@ -72,7 +72,7 @@ public class FoodORRestoSearch extends Pages
 		genericSearchBar.sendKeys(foodItem);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("_3sbqM")));
 		foodItems.get(0).click();
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"AddToCardFoodSearch.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/AddToCardFoodSearch.jpg");
 		node.log(LogStatus.PASS, "Searching food item "+foodItem+ " successfully completed");
 	}
 	
@@ -91,7 +91,7 @@ public class FoodORRestoSearch extends Pages
 		{
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.className("_2EQ3T")));
 			String title = checkoutTitle.getText();
-			takeSS(driver,TestingProperties.getScreenshotFolder()+"ItemAddedToCart.jpg");
+			takeSS(driver,TestingProperties.getScreenshotFolder()+"/ItemAddedToCart.jpg");
 			if(title.equalsIgnoreCase("SECURE CHECKOUT") && payMsg.getText().contains("TO PAY"))
 			{
 				node.log(LogStatus.PASS, "Add to cart feature successfully completed");

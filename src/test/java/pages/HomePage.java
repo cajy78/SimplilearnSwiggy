@@ -85,7 +85,7 @@ public class HomePage extends Pages
 	{
 		try {
 			Thread.sleep(1000);
-			takeSS(driver,TestingProperties.getScreenshotFolder()+"RegisteredNoLogin.jpg");
+			takeSS(driver,TestingProperties.getScreenshotFolder()+"/RegisteredNoLogin.jpg");
 			Assert.assertEquals(otpMsg.getText(),"Enter OTP");
 			node.log(LogStatus.PASS, "Login test passed successfully");
 		}
@@ -102,7 +102,7 @@ public class HomePage extends Pages
 		email.sendKeys(emailAddress);
 		pwd.sendKeys(password);
 		submitLogin.click();
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"UnRegisteredNoLogin.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/UnRegisteredNoLogin.jpg");
 		validateSignUpTest(node);
 	}
 	
@@ -125,7 +125,7 @@ public class HomePage extends Pages
 		userName.sendKeys(name);
 		email.sendKeys(emailAddress);
 		pwd.sendKeys(password);
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"AccountSignupDetails.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/AccountSignupDetails.jpg");
 		submitLogin.click();
 	}
 	
@@ -134,7 +134,7 @@ public class HomePage extends Pages
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestingProperties.getLoadAndWaitTimeout()));
 			wait.until(ExpectedConditions.textToBePresentInElement(submitLogin, "VERIFY OTP"));
-			takeSS(driver,TestingProperties.getScreenshotFolder()+"AccountSignupClick.jpg");
+			takeSS(driver,TestingProperties.getScreenshotFolder()+"/AccountSignupClick.jpg");
 			Assert.assertEquals(submitLogin.getText(),"VERIFY OTP");
 			node.log(LogStatus.PASS, "Signup test passed successfully");
 		}
@@ -150,6 +150,6 @@ public class HomePage extends Pages
 	{
 		locationSearch.sendKeys(location);
 		findFoodSearch.get(0).click();
-		takeSS(driver,TestingProperties.getScreenshotFolder()+"FindFoodSubmitted.jpg");
+		takeSS(driver,TestingProperties.getScreenshotFolder()+"/FindFoodSubmitted.jpg");
 	}
 }
